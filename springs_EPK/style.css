@@ -1,0 +1,238 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 160%;
+    color: #333333;
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none; color: inherit;
+}
+
+/* Layout Helper */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding:120px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    letter-spacing: 0.1em;
+
+    position: relative;
+    /*
+    display: inline-block;
+    border-bottom:1px solid #1a1a1a;
+    padding-bottom: 8px;*/
+}
+/* 文字の下に線を生成する */
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #333;
+
+    transition: width 0.4s ease-out;
+}
+.section-title.is-active::after {
+    width: 200px;
+}
+
+.bg-light { 
+    background-color: #f3f3f3; 
+}
+.bg-dark {
+    background-color: #1a1a1a; 
+    color: #fff;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 15px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links { 
+    display: flex;
+    margin-bottom: 20px;
+}
+.nav-links li {
+    font-weight: bold;
+    margin-left: 20px;
+}
+.nav-links a:hover {
+    color: #888;
+}
+
+/* Main Visual */
+.main-visual {
+    height: 100vh;
+    background: url(images/main_visual.jpg), center, no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+}
+.main-visual .logo-font{
+    font-size: 4rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.mv-content{
+    padding: 40px 30px 30px 30px;
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+/* About */
+.about-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    line-height: 180%;
+    flex-wrap: wrap;
+}
+.about-img {
+    flex: 1;
+    min-width: 300px;
+}
+.about-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.about-text {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+
+
+
+/* Works */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.work-item { text-align: center; }
+
+.embed-contents {
+    background: #ddd;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+    position: relative;
+}
+.embed-contents iframe:first-child{
+/* 幅を少しだけ（バーの分）広くする */
+    width: calc(100% + 20px); 
+    height: 100%;
+    
+    /* 右側に20px分突き出させて、親のoverflow:hiddenで隠す */
+    margin-right: -20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #333333;
+    color: #ffffff;
+}
+
+/* Live */
+.live-list li {
+    padding: 20px 0;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.live-list .date {
+    font-weight: bold;
+    width: 120px;
+}
+.live-list .place {
+    flex: 1;
+}
+
+/* Contact */
+.contact-info {
+    text-align: center;
+}
+.email {
+    display: block;
+    font-size: 1.5rem;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.sns-links a {
+    margin: 0 10px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mv-content h1 {
+        font-size: 2.5rem;
+    }
+    .live-list li {
+        flex-direction: column;
+    }
+    .nav-links {
+        display: none;
+    }
+}
