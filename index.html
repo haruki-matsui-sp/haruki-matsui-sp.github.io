@@ -25,6 +25,13 @@
                         <li><a href="#live">Live</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
+
+                    <!-- hamburger menu -->
+                    <div class="hamburger-btn" id="js-hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
             </nav>
         </div>
     </header>
@@ -122,11 +129,11 @@
                     </a>
                     <div class="sns-links">
                         <a href="https://x.com/springs_551" target="_blank">
-                            <img src="images/x_logo.png" alt="x_logo" width="20px" height="auto">
+                            <img src="images/x_logo.svg" alt="x_logo" width="20px" height="auto">
                         </a>
-                        <a href="https://www.instagram.com/springs_jp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">                            <img src="images/instagram_logo.png" alt="x_logo" width="20px" height="auto">
+                        <a href="https://www.instagram.com/springs_jp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">                            <img src="images/instagram_logo.png" alt="instagram_logo" width="20px" height="auto">
                         </a>
-                        <a href="https://youtube.com/channel/UCLnn_Y0XSAqkqNrWa2kUxmA?si=lMRyrMeMDv8eQTsC" target="_blank">                            <img src="images/youtube_logo.png" alt="x_logo" width="20px" height="auto">
+                        <a href="https://youtube.com/channel/UCLnn_Y0XSAqkqNrWa2kUxmA?si=lMRyrMeMDv8eQTsC" target="_blank">                            <img src="images/youtube_logo.svg" alt="youtube_logo" width="20px" height="auto">
                         </a>
                     </div>
                 </div>
@@ -139,24 +146,7 @@
     </footer>
     
     
-    <script>
-        // 画面のスクロールを監視するセンサー（IntersectionObserver）を作成
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // 見出しが画面内に入ってくる時
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-active'); // クラスを付与
-                }
-            });
-        }, {
-            rootMargin: "-10% 0px" // 画面の下から10%上がった位置で反応させる（微調整用）
-        });
-
-        // すべての .section-title を見つけて、監視対象にする
-        document.querySelectorAll('.section-title').forEach(title => {
-            observer.observe(title);
-        });
-    </script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
